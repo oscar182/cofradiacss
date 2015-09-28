@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block titulo %} Administracion de Usuario {% endblock titulo %}
+{% block content %}
+
+<center>
+    <!--input type="button" value="Crear Publicacion"-->
+    <li class="scroll"><a href="{% url "crear_publi" %}">Crear Publicacion</a> </li>
+    <li class="scroll"><a href="{% url "publi_creada" user.id %}">Ver Publicaciones Creadas</a> </li>
+    <li class="scroll"><a href="{% url "publi_postuladas" user.id %}">Ver Publicaciones Postuladas</a> </li>
+    <li class="scroll"><a href="{% url "perfil_usuario" user.id %}">Ver Perfil de Usuario</a> </li>
+ 
+ 
+    <!--h2>Crear Publicación</h2>
+
+    {% if message %}
+    <b>{{message}}</b>    	
+    {% endif %}
+    <form action="" method="post"> 
+    	{% csrf_token %}
+    	<!-- aqui se podria incluir el snippet {% include "form_snippets.html" %} >
+    	{% include "form_snippets.html" %} 
+        <br>
+    	<input type="submit" value="Crear Publicacion">
+    </form-->
+    </center>
+
+{% endblock content %}

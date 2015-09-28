@@ -1,0 +1,7 @@
+{% for field in form %}
+	<div class="field_container">
+		{{field.error}} <br>
+		{{field.label_tag}} 
+		{{field}}
+	</div>
+{% endfor %}

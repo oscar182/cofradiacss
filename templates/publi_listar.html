@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %} Bienvenido {% endblock %}
+{% block content %}
+
+<!-- Login y registro--> 
+<div>
+	<div id="tituloCategoria"><center><h1 style="font-family: sans-serif;">{{texto}}</h1></center></div>
+	<br>
+ 	<form action="/search/" method="get">
+ 	
+        <ul>
+        	{% for publi in publis %}
+        	<div id="two">
+        		<center>
+                    <!--h1 id="tituloDescription">{{ publi.nombre|escape|capfirst }}</h1-->
+                    <a href="{% url "publi_detalle" publi.id %}">
+                        <h1 id="tituloDescription">{{ publi.nombre|escape|capfirst }}</h1>
+                    </a>
+                </center>
+        		<li>{{publi.usuario.user.get_full_name}}</li>
+        		<li>{{publi.fechaInicio}}</li>              
+        		<li>{{ publi.descripcion|escape }}</li>
+        		<hr>
+        		<br>
+      		</div>
+      		{% endfor %}
+    	</ul>
+
+    </form>
+	
+</div>
+{%endblock%}
+

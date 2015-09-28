@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titulo %} Publicacion {% endblock titulo %}
+{% block content %}
+
+<center>
+    <h2>Crear Publicación</h2>
+    {% if message %}
+    <b>{{message}}</b>    	
+    {% endif %}
+    <form action="." method="post"> 
+    	{% csrf_token %}
+    	<!-- aqui se podria incluir el snippet {% include "form_snippets.html" %} -->
+    	{% include "form_snippets.html" %} 
+        <br>
+    	<input type="submit" value="Crear Publicacion">
+    </form>
+    </center>
+
+{% endblock content %}

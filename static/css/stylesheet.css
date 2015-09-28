@@ -1,0 +1,169 @@
+/* Fuentes */
+@font-face{
+ font-family: 'Cyberfunk';
+ src: url('../font/Cyberfunk.ttf');
+}
+@font-face{
+ font-family: 'Coco';
+ src: url('../font/Coco.ttf');
+}
+
+
+html {
+        background: url('../img/background.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+h1{
+    margin: 0
+}
+body{
+    margin: 0 0 0 0;
+}
+.backVideo{
+    background-color: black;
+    margin: 0 0 0 0;
+}
+.textoVideo{
+    font-family: Coco;
+    color: white;
+    margin-left: 90px;
+    padding-bottom: 28px;
+    padding-top: 5px;
+}
+.video{
+    margin-right: 50px;
+}
+
+.barra{
+    background-color: rgba(255, 255, 255, 0.36);
+    box-shadow: -11px 7px 14px #888888;
+}
+
+.backbarra{
+    font-family: Cyberfunk;
+    color:rgb(91, 103, 169);
+    font-size: 20px;
+    text-decoration:none; 
+
+}
+.encabezado{
+    padding: 5px;
+	background-color: #3E383C;
+	padding:inherit;
+    padding-bottom: 10px;
+    z-index: 1;
+    padding-bottom: 70px;
+}
+
+.publicacionIz{
+    float: left;
+}
+.publicacionDe{
+    float: right;
+}
+.publicacionCen{
+    float: center;
+}
+.derecha{
+    float: right;
+    margin: 5px;
+}
+.izquierda{
+    float: left;
+    margin-right: 60px; 
+}
+/*search*/
+.buscador{
+    border-bottom-width: 0px;
+    margin-bottom: 0px;
+    margin-top: 35px;
+    border-radius: 5px;
+    box-shadow: 4px;
+}
+.separdorlogin{
+    font-family: Coco;
+    color:white;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.logueo{
+    font-family: Coco;
+    color:white;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}.logueo:hover{
+    box-shadow: 0px 3px 24px;
+    border-radius: 7px;
+    background-color: rgba(154, 154, 154, 0.86);
+    font-family: Coco;
+    font-size: 15px;
+    /* text-decoration saca el subrayado del link */
+    text-decoration:none;
+    margin-right: 20px;
+    color: white;
+    padding: 3px 3px 3px 3px;
+}
+.logueo1{
+    font-family: Coco;
+    color:white;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 20px;
+}
+.logueo1:hover{
+    box-shadow: 0px 3px 24px;
+    border-radius: 7px;
+    background-color: rgba(154, 154, 154, 0.86);
+    font-family: Cyberfunk;
+    font-size: 20px;
+    /* text-decoration saca el subrayado del link */
+    text-decoration:none;
+    margin-right: 20px;
+    color: white;
+    padding: 3px 3px 3px 3px;
+}
+
+/*FOOTER*/
+.footer{
+    position: inherit;
+    bottom: 0px;
+    background-color:black;
+    color:white;
+    padding:5px;
+    margin-top: 63px;
+
+}
+.textfooter{
+    text-decoration:none;
+    color: white;
+    font-family: Coco;
+}
+
+.quienesomos{
+    background-color: white;
+    margin: inherit;
+}
+.nuevoProyecto{
+    font-family: Cyberfunk;
+    color: white;
+    text-align: center;
+}
+.nuevoProyecto1{
+    font-family: Coco;
+    color: white;
+
+}
+.nuevoProyecto2{
+    background-color: #3E383C;
+    margin-left: 300px;
+    margin-right: 300px;
+    border-radius: 5px;
+}
+.td{
+    padding-right: 75px;
+}

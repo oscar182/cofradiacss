@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %} Bienvenido {% endblock %}
+
+{% block content %}
+
+<!-- aca empieza el video -->
+<div class="backVideo">
+
+	<div class="video"style="float:right;">
+		<iframe style="margin-top:5px;"width="400" height="215" src="https://www.youtube.com/embed/Yzd1Jy3d2f4" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div style="float=left;">
+    	<h1 class="textoVideo">Que es Cofradía?</h1>
+    	<h1 class="textoVideo">Terminos y Condiciones</h1>
+    	<h1 class="textoVideo">Cuantas categorias hay?</h1>
+	</div>
+
+</div>
+<!-- aca termina el video -->
+
+
+ <!-- Publicaciones -->
+
+<div>
+	<section> 
+	    <div class="row">
+<!-- Aca empieza el div grande -->
+			<div class="col-md-12" >
+
+		        <div class="col-sm-4">
+		        	<center><h1 class="column-title"><a href="{% url "publi_listar" 3 %}">Trabajos</a></h1></center>
+		            <div id="carousel-trabajos" class="carousel slide text-center" data-ride="carousel" style="height: 350px;">
+		            	<!-- Controls -->
+		                <div class="btns">
+		                    <a class="btn btn-primary btn-sm" href="#carousel-trabajos" role="button" data-slide="prev">
+		                        <span class="fa fa-angle-left" aria-hidden="true"></span>
+		                        <span class="sr-only">Previous</span>
+		                    </a>
+		                    <a class="btn btn-primary btn-sm" href="#carousel-trabajos" role="button" data-slide="next">
+		                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+		                        <span class="sr-only">Next</span>
+		                    </a>
+		                </div>
+		                <br>
+		                <!-- Wrapper for slides -->
+		                <div class="carousel-inner" role="listbox">
+		  		
+		  					
+		                    <div class="item active">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<!--h3>Aqui iria la descripcion de la categoria</h3-->
+			                    </div>
+		                    </div>
+		                    {% for publi in publi3 %}
+		                    <div class="item">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<div class="team-img">
+		                        		<a href="{% url "publi_detalle" publi.id %}">
+	                        				<img src="{% static 'images/post.png' %}" height="100">
+	                    				</a>
+		                    		</div>
+		                   			 <div class="team-info">
+			                            <h3>{{ publi.nombre|escape|capfirst }}</h3>		                            
+			                        </div>
+			                        <p>{{ publi.descripcion|escape }}</p>
+			                        <span>{{publi.usuario.user.get_full_name}}</span>
+			                        <span>{{publi.fechaInicio}}</span>
+			                    </div>
+		                    </div>
+		                    {% endfor %}
+		                </div>                         
+		            </div>
+		        </div>
+
+		        <div class="col-sm-4">
+		        	<center><h1 class="column-title"><a href="{% url "publi_listar" 1 %}">Deportes</a></h1></center>
+		            <div id="carousel-deporte" class="carousel slide text-center" data-ride="carousel"style="height: 350px;">
+		            	<!-- Controls -->
+		                <div class="btns">
+		                    <a class="btn btn-primary btn-sm" href="#carousel-deporte" role="button" data-slide="prev">
+		                        <span class="fa fa-angle-left" aria-hidden="true"></span>
+		                        <span class="sr-only">Previous</span>
+		                    </a>
+		                    <a class="btn btn-primary btn-sm" href="#carousel-deporte" role="button" data-slide="next">
+		                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+		                        <span class="sr-only">Next</span>
+		                    </a>
+		                </div>
+		                <br>
+		                <!-- Wrapper for slides -->
+		                <div class="carousel-inner" role="listbox">
+		  		
+		  					
+		                    <div class="item active">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<!--h3>Aqui iria la descripcion de la categoria</h3-->
+			                    </div>
+		                    </div>
+		                    {% for publi in publi1 %}
+		                    <div class="item">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<div class="team-img">
+		                        		<a href="{% url "publi_detalle" publi.id %}">
+	                        				<img src="{% static 'images/post.png' %}" height="100">
+	                    				</a>
+			                    		</div>
+			                   			 <div class="team-info">
+				                            <h3>{{ publi.nombre|escape|capfirst }}</h3>		                            
+				                        </div>
+				                        <p>{{ publi.descripcion|escape }}</p>
+				                        <span>{{publi.usuario.user.get_full_name}}</span>
+				                        <span>{{publi.fechaInicio}}</span>		                        
+			                    </div>
+		                    </div>
+		                    {% endfor %}
+		                </div>                         
+		            </div>
+		        </div>
+
+		        <div class="col-sm-4">
+		            <center><h1 class="column-title"><a href="{% url "publi_listar" 2 %}">Estudios</a></h1></center>
+		            <div id="carousel-estudio" class="carousel slide text-center" data-ride="carousel"style="height: 350px;">
+		            	<!-- Controls -->
+		                <div class="btns">
+		                    <a class="btn btn-primary btn-sm" href="#carousel-estudio" role="button" data-slide="prev">
+		                        <span class="fa fa-angle-left" aria-hidden="true"></span>
+		                        <span class="sr-only">Previous</span>
+		                    </a>
+		                    <a class="btn btn-primary btn-sm" href="#carousel-estudio" role="button" data-slide="next">
+		                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+		                        <span class="sr-only">Next</span>
+		                    </a>
+		                </div>
+		                <br>
+		                <!-- Wrapper for slides -->
+		                <div class="carousel-inner" role="listbox">  					
+		                    <div class="item active">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<!--h3>Aqui iria la descripcion de la categoria</h3-->
+			                    </div>
+		                    </div>
+		                    {% for publi in publi2 %}
+		                    <div class="item">		            
+		                        <div class="team-member wow fadeInUp" data-wow-duration="400ms" data-wow-delay="0ms">
+		                    		<div class="team-img">
+		                        		<a href="{% url "publi_detalle" publi.id %}">
+	                        				<img src="{% static 'images/post.png' %}" height="100">
+	                    				</a>
+		                    		</div>
+		                   			 <div class="team-info">
+			                            <h3>{{ publi.nombre|escape|capfirst }}</h3>		                            
+			                        </div>
+			                        <p>{{ publi.descripcion|escape }}</p>
+			                        <span>{{publi.usuario.user.get_full_name}}</span>
+			                        <span>{{publi.fechaInicio}}</span>
+			                    </div>
+		                    </div>
+		                    {% endfor %}
+		                </div>                         
+		            </div>
+		        </div>
+<!-- aca termina el div grande -->
+		    </div>
+	    </div>
+	</section> 
+</div>
+
+{% endblock %}
+
+ 

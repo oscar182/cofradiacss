@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %} Bienvenido {% endblock %}
+{% block content %}
+
+<!-- Login y registro--> 
+<div>
+	<br>
+ 	<form action="/search/" method="get">	
+        <ul>
+        	<div id="two">
+        		<center><h1 id="tituloDescription">{{ usuario.user.username|escape|capfirst }}</h1></center>
+                <hr>
+        		<li>Nombre{{usuario.user.get_full_name}}</li>
+        		<li>E-mail{{usuario.user.email}}</li>
+                <li>Fecha de NAcimiento: {{usuario.fechaNacimiento}}</li>  
+        		<li>Sexo: {{usuario.sexo}}</li>
+        		<li>Telefono: {{usuario.telefono}}</li>  
+                <hr>
+        		<br>
+      		</div>
+    	</ul>
+
+    </form>
+	
+</div>
+{%endblock%}
+
+

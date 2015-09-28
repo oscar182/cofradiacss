@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block titulo %} Bienvenido {% endblock %}
+{% block content %}
+
+<!-- Login y registro--> 
+<div>
+	<div id="tituloCategoria"><center><h1 style="font-family: sans-serif;">{{texto}}</h1></center></div>
+	<br>
+ 	<form action="/search/" method="get">	
+        <ul>
+        	<div id="two">
+        		<center><h1 id="tituloDescription">{{ publi.nombre|escape|capfirst }}</h1></center>
+                
+                {% if user.id != publi.usuario %}
+                    Postularse a la publicacion: 
+                    <a href="{% url "postularse" user.id publi.id  %}">Postularse al Evento</a> 
+                {% else %}
+                <p>Usted es el dueño de la publicacion</p>
+                {% endif %}
+
+        		<li>{{publi.usuario.user.get_full_name}}</li>
+        		<li>Fecha de Inicio: {{publi.fechaInicio}}</li>
+                <li>Fecha de Cierre: {{publi.fechaCierre}}</li>  
+        		<li>Descripcion: {{ publi.descripcion|escape }}</li>
+        		<li>Cantidad de Postulantes que se necesitan: {{publi.cantidad}} persona(s)</li>                              
+
+
+                <hr>
+        		<br>
+      		</div>
+    	</ul>
+
+    </form>
+	
+</div>
+{%endblock%}
+
+
